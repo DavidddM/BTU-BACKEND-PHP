@@ -21,11 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c03f5513-35cd-4fdd-915e-7e1dc1560031" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +156,7 @@
     <property name="DatabaseDriversLRU" value="mysql&#10;mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/BTU-BACKEND-PHP-MIDTERM/Midterm1" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -185,7 +180,8 @@
       <option name="presentableId" value="Default" />
       <updated>1602429940224</updated>
       <workItem from="1602429941274" duration="8468000" />
-      <workItem from="1603669324626" duration="4406000" />
+      <workItem from="1603669324626" duration="4541000" />
+      <workItem from="1603724711759" duration="165000" />
     </task>
     <servers />
   </component>
@@ -213,6 +209,10 @@
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
     <state x="418" y="180" width="1084" height="722" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1043@0.0.1920.1043" timestamp="1602434241243" />
+    <state x="743" y="280" width="428" height="484" key="FileChooserDialogImpl" timestamp="1603724875181">
+      <screen x="0" y="0" width="1920" height="1043" />
+    </state>
+    <state x="743" y="280" width="428" height="484" key="FileChooserDialogImpl/0.0.1920.1043@0.0.1920.1043" timestamp="1603724875181" />
     <state width="1874" height="142" key="GridCell.Tab.0.bottom" timestamp="1602430252311">
       <screen x="0" y="0" width="1920" height="1043" />
     </state>
