@@ -12,8 +12,7 @@ class PostController extends Controller
         return view('posts')->with("posts", $posts);
     }
 
-    public function show($id) {
-        $post = Post::findOrFail($id);
+    public function show(Post $post) {
         return view("post")->with("post", $post);
     }
 
@@ -24,6 +23,20 @@ class PostController extends Controller
     public function save(Request $req) {
         $post = new Post($req->all());
         $post->save();
+        return redirect()->action([\App\Http\Controllers\PostController::class, 'index']);
+    }
+
+    public function edit(Post $post) {
+        return view("edit")->with("post", $post);
+    }
+
+    public function update(Request $request, Post $post) {
+        $post -> update($request->all());
+        return redirect()->route('posts.show', $post);
+    }
+
+    public function delete(Post $post) {
+        $post->delete();
         return redirect()->action([\App\Http\Controllers\PostController::class, 'index']);
     }
 }

@@ -1,6 +1,6 @@
 @extends("layout.layout")
 @section("content")
-    <div>
+    <div style="width: 450px; margin:0 auto;">
         <form  method="post" enctype="multipart/form-data" action="{{route('posts.save')}}">
             <div class="box-body">
                 <div class="form-group">
