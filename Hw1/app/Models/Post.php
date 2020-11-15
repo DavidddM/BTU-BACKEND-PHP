@@ -13,4 +13,8 @@ class Post extends Model
         'postContent',
         'postLikes'
     ];
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
 }
