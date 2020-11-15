@@ -16,15 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('welcome');});
 
-Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index']);
+Route::get('/posts', [\App\Http\Controllers\PostController::class, 'index'])
+    ->middleware('auth');
 Route::get('/posts/create', [\App\Http\Controllers\PostController::class, 'create'])->name("posts.create")
              ->middleware('auth');
 Route::post('/posts/save', [\App\Http\Controllers\PostController::class, 'save'])->name("posts.save");
-Route::get('/posts/{post}', [\App\Http\Controllers\PostController::class, 'show'])->name('posts.show');
+Route::get('/posts/{post}', [\App\Http\Controllers\PostController::class, 'show'])->name('posts.show')
+    ->middleware('auth');
 
-Route::get('/posts/{post}/edit', [\App\Http\Controllers\PostController::class, 'edit'])->name("posts.edit");
+Route::get('/posts/{post}/edit', [\App\Http\Controllers\PostController::class, 'edit'])->name("posts.edit")
+    ->middleware('auth');
 Route::put('/posts/{post}/update', [\App\Http\Controllers\PostController::class, 'update'])->name("posts.update");
-Route::delete('/posts/{post}/delete', [\App\Http\Controllers\PostController::class, 'delete'])->name("posts.delete");
+Route::delete('/posts/{post}/delete', [\App\Http\Controllers\PostController::class, 'delete'])->name("posts.delete")
+    ->middleware('auth');
 
 Route::get('/users/login', [UserController::class, 'login'])->name('login');
 Route::post('/users/post-login', [UserController::class, 'postLogin'])->name('post_login');
