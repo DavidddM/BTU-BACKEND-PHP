@@ -15,6 +15,14 @@
                     <label for="exampleInputEmail1">Post Likes</label>
                     <input type="name" class="form-control"  placeholder="Likes" name="postLikes">
                 </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Post Tags</label>
+                    <select name="tags[]" id="" multiple>
+                        @foreach($tags as $tag)
+                            <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
             @csrf
             <div class="box-footer">

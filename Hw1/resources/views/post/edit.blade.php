@@ -17,6 +17,14 @@
                     <label for="exampleInputEmail1">Post Likes</label>
                     <input type="name" class="form-control"  placeholder="Likes" name="postLikes" value="{{old('postLikes', $post->postLikes)}}">
                 </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Tags</label>
+                    <select name="tags[]" id="" multiple>
+                        @foreach($tags as $tag)
+                            <option value="{{ $tag->id }}" @if(in_array($tag->id, $post->tags->pluck('id')->toArray())) selected @endif>{{ $tag->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
             </div>
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Save</button>

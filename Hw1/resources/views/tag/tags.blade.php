@@ -13,7 +13,7 @@
                 </svg>
             </div>
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                @foreach($posts as $post)
+                @foreach($tags as $tag)
                     <div class="grid grid-cols-1">
                         <div class="p-6">
                             <div class="d-flex justify-content-center">
@@ -25,11 +25,10 @@
                                 </svg>
                                 <div class="ml-4 text-lg leading-7 font-semibold"
                                      style="display: inline-flex;">
-                                    <a href="{{route('posts.show', $post)}}"
-                                       class="underline text-gray-900 dark:text-white">{{$post->postTitle}}</a>
+                                   <p>{{$tag->name}}</p>
                                     <a class="underline text-gray-900 dark:text-white"
-                                       style="margin-left:10px;" href="{{route('posts.edit', $post)}}">[Edit]</a>
-                                    <form method="post" action="{{route('posts.delete', $post)}}"
+                                       style="margin-left:10px;" href="{{route('tags.edit', $tag)}}">[Edit]</a>
+                                    <form method="post" action="{{route('tags.delete', $tag)}}"
                                           class="form-inline">
                                         @csrf
                                         @method('DELETE')
@@ -40,23 +39,8 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    {{$post->postContent}}
-                                </div>
-                                <div class="mt-2 text-lg dark:text-gray-400 text-sm">
-                                    author : {{$post->user->name}}
-                                </div>
-                            </div>
-                            <div class="ml-12">
-                                Tags:
-                                @foreach($post -> tags as $tag)
-                                    #{{ $tag->name }}
-                                @endforeach
-                            </div>
                         </div>
+                        @endforeach
                     </div>
-                @endforeach
             </div>
-        </div>
 @endsection

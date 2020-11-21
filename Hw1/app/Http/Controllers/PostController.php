@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -20,22 +21,27 @@ class PostController extends Controller
     }
 
     public function create() {
-        return view("post.create");
+        $tags = Tag::all();
+        return view("post.create", compact('tags'));
     }
 
     public function save(PostRequest $req) {
         $post = new Post($req->all());
         $post -> user_id = Auth::id();
         $post->save();
+        $post->tags()->attach($req->tags);
         return redirect()->action([\App\Http\Controllers\PostController::class, 'index']);
     }
 
     public function edit(Post $post) {
-        return view("post.edit")->with("post", $post);
+        $tags = Tag::all();
+        return view("post/edit", compact('post', 'tags'));
     }
 
     public function update(Request $request, Post $post) {
         $post -> update($request->all());
+        $post->tags()->detach($post->tags->pluck('id'));
+        $post->tags()->attach($request->tags);
         return redirect()->route('posts.show', $post);
     }
 

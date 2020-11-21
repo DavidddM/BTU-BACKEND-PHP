@@ -24,7 +24,12 @@
                             </form>
                         </div>
                     </div>
-
+                    <div class="ml-12">
+                        Tags:
+                        @foreach($post -> tags as $tag)
+                           #{{ $tag->name }}
+                        @endforeach
+                    </div>
                     <div class="ml-12">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                             {{$post->postContent}}

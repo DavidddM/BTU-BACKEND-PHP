@@ -400,19 +400,21 @@
         <ul class="nav justify-content-end navbar-nav">
             @if (Route::has('login'))
                 @auth
-                    <li class="nav-item">
+                    <span>
                         <a class="nav-link" href={{route('posts.create')}}>Create Post</a>
-                    </li>
-                    <li class="nav-link">
+                    </span>
+                    <span>
+                        <a class="nav-link" href={{route('tags.create')}}>Create Tag</a>
+                    </span>
+                    <span >
                         <a class="nav-link" href="{{route('logout')}}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                            class="nav-link">Logout</a>
                         <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                             {{csrf_field()}}
                         </form>
-                    </li>
-                    User Name : <h3 class="text-primary">{{ Auth::user()->name}}</h3>
-                    User Email : <h3 class="text-primary">{{ Auth::user()->email}}</h3>
+                    </span>
+                    User : <p class="text-primary">{{ Auth::user()->name}} {{ Auth::user()->email}}</p>
                 @else
                     <a class="nav-link" href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
                     @if (Route::has('register'))
